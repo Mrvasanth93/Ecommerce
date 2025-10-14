@@ -1,0 +1,146 @@
+.curosel {
+    max-width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.178);
+}
+
+.curosel .curosel-1,
+.curosel-2 {
+    background-color: rgba(255, 192, 203, 0.37);
+    border-radius: 5px;
+    height: 150px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.233);
+}
+
+.curosel .curosel-1 .left,
+.curosel-2 .left {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.curosel .curosel-1 .left img,
+.curosel-2 .left img {
+    height: 100%;
+    border-radius: 10px;
+}
+
+.curosel .curosel-1 .right,
+.curosel-2 .right {
+    width: 50%;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.curosel .curosel-1 .right h3,
+.curosel-2 .right h3 {
+    color: deeppink;
+    font-size: 14px;
+    font-weight: bolder;
+}
+
+.curosel .curosel-1 .right h6,
+.curosel-2 .right h6 {
+    font-weight: bolder;
+    width: 95%;
+    font-size: 10px;
+    line-height: 15px;
+    color: palevioletred;
+    text-align: justify;
+}
+
+.curosel .curosel-1 .right .booknow,
+.curosel-2 .right .booknow {
+    border: 1px solid black;
+    padding: 2px 7px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: 1px solid hotpink;
+    color: hotpink;
+    font-weight: bold;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.curosel-2 {
+    background-color: rgba(230, 230, 250, 0.658);
+}
+
+.curosel-2 .right h3 {
+    color: blue;
+}
+
+.curosel-2 .right h6 {
+    color: darkblue;
+}
+
+.curosel-2 .right .booknow {
+    color: blue;
+    border: 1px solid blue;
+}
+
+@media (max-width:800px) {
+    .curosel {
+        flex-direction: column;
+        height: fit-content;
+    }
+}
+
+@media (max-width:350px) {
+
+    .curosel .curosel-1,
+    .curosel-2 {
+        height: 110px;
+    }
+
+    .curosel .curosel-1 .left,
+    .curosel-2 .left {
+        width: 30%;
+    }
+
+    .curosel .curosel-1 .right,
+    .curosel-2 .right {
+        width: 70%;
+    }
+
+    .curosel .curosel-1 .left img,
+    .curosel-2 .left img {
+        width: 100%;
+    }
+
+    .curosel .curosel-1 .right h3,
+    .curosel-2 .right h3 {
+        font-size: 11px;
+    }
+
+    .curosel .curosel-1 .right h6,
+    .curosel-2 .right h6 {
+        font-size: 8px;
+    }
+
+    .curosel .curosel-1 .right .booknow,
+    .curosel-2 .right .booknow {
+        font-size: 9px;
+        border-top-left-radius: 7px;
+        border-top-right-radius: 7px;
+        border-bottom-right-radius: 7px;
+
+    }
+}

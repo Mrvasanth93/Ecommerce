@@ -1,0 +1,39 @@
+.helpcenter{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 1%;
+    padding-right: 1%;
+    height: 50px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.226);
+    padding-top: 10px;
+}
+.helpcenter .help-left{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.helpcenter .help-right{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.helpcenter h5{
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    color: rgba(0, 0, 0, 0.644);
+}
+.helpcenter .help-right h5{
+    margin-right: 15px;
+}
+.helpcenter .help-right h5:hover{
+    color: #ff6347;
+    cursor: pointer;
+}
+@media (max-width:650px) {
+    .helpcenter{
+        display: none;
+    }
+}

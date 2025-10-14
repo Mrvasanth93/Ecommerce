@@ -1,0 +1,166 @@
+.card1{
+   width: 250px;
+   height: 370px;
+   min-height: fit-content;
+   box-shadow: 1px 1px 2px rgba(128, 128, 128, 0.479) , -1px 1px 2px rgba(128, 128, 128, 0.479);
+   border-radius: 5px;
+   background-color:  rgb(245, 248, 246);
+}
+.card1 .card-top{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    overflow: hidden;
+}
+.card1 .card-top{
+    cursor: pointer;
+    position: relative;
+}
+.card1 .card-top .wishlist{
+    border-radius: 50%;
+    position: absolute;
+    top:5px;
+    right:5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25px;
+    width: 25px;
+    transition: 0.2s;
+    transition-timing-function: ease-in-out;
+}
+.card1 .card-top .wishlist:hover{
+    background-color: rgba(128, 128, 128, 0.274);
+    box-shadow: 0.5px 0.5px 5px snow;}
+.card1 .card-top .wishlist img{
+    width: 75%;
+}
+.card-top img{
+    overflow: hidden;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.card1 .card-middle{
+    padding: 15px;
+    font-size: 14px;
+    padding-top: 0;
+    margin-top: 0;
+    cursor: pointer;
+}
+.card1 .card-middle .productname{
+    color: rgba(0, 0, 0, 0.753);
+    letter-spacing: 1px;
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: bolder;
+    font-family: "Poppins", sans-serif;
+}
+.card1 .card-middle .productdesc{
+    font-size: 12px;
+    line-height: 15px;
+    text-align: left;
+    font-family: "Poppins", sans-serif;
+    color: rgba(87, 87, 87, 0.623);
+    border-radius: 2px;
+    transition: 0.5s;
+    letter-spacing: 1px;
+    margin: 10px 0;
+    margin-top: 5px
+}
+
+.card-middle .price{
+    display: flex;
+    align-items: center;
+    justify-content:left;
+    font-size: 16px;
+    color: gray;
+    margin-top: -5px;
+}
+.card-middle .price .original-price{
+    color: rgba(128, 128, 128, 0.596);
+    text-decoration: line-through;
+    font-size: 13px;
+    margin-left: 7px;
+}
+.card-middle .price .current-price{
+    color: rgb(247, 12, 51);
+    font-weight: bolder;
+}
+.card1 .card-footer{
+    margin: 10px 5%;
+    border: 1px solid rgb(247, 12, 51);
+    color: rgb(247, 12, 51);
+    font-weight: bold;
+    font-size: 14px;
+    height: 35px;
+    border-radius: 5px;
+    font-family: "Poppins", sans-serif;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 10px;
+    font-size: 12px;
+    width: 90%;
+    margin-top: 2px;
+}
+.card1 .card-footer:hover{
+    background-color: rgb(247, 12, 51);
+    cursor: pointer;
+    color: white;
+}
+.card-footer .cart-img{
+    width: 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card-footer div{
+    margin-left: 3px;
+    font-weight: bolder;
+}
+.card-footer div img{
+    width: 90%;
+}
+@media (max-width:370px) {
+    .card1{
+        width:145px ;
+        height: 180px;
+    }
+    .card1 .card-middle{
+        padding: 5px;
+        height: 60%;
+    }
+    .card1 .card-middle .productname{
+        font-size: 11.5px;
+    }
+    .current-price{
+        font-size: 12px;
+    }
+    .card-middle .price .original-price{
+        font-size: 10px;
+    }
+    .card1 .card-middle .productdesc{
+        font-size: 8px;
+    }
+    .card1 .card-footer{
+        padding: 0 5px;
+    }
+    .card1 .card-footer{
+        width:90%;
+        height: 25px;
+        font-size: 8px;
+        margin-left: 5px;
+        margin-bottom: 10px;
+    }
+    .card1 .card-footer .cart-img{
+        width: 10px;
+        height: 10px;
+    }
+    .card1 .card-footer .cart-img img{
+        width: 100%;
+    }
+}
