@@ -1,5 +1,6 @@
 import "./Sort.css"
-import samplelogo from "../assets/icons/table-view.png"
+import table from "../assets/icons/table-view.png"
+import grid from "../assets/icons/grid-view.png"
 const SortBy = ()=>{
     return(
         <>
@@ -7,10 +8,10 @@ const SortBy = ()=>{
                 <div className="sort-container">
                     <div className="left">
                         <div>
-                            <img src={samplelogo} alt="" />
+                            <img src={grid} alt="" />
                         </div>
                         <div>
-                            <img src={samplelogo} alt="" />
+                            <img src={table} alt="" />
                         </div>
                     </div>
                     <div className="right">
