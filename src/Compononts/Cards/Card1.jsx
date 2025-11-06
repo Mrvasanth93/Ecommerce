@@ -22,8 +22,8 @@ const Card1 = (probs) =>{
                     {probs.data.productName && <div className="productname">{probs.data.productName}</div>}
                     <div className="productdesc">{probs.data.productDescription}</div>
                     <div className="price">
-                        <div className="current-price">{probs.data.productPrice}</div>
-                        <div className="original-price">{probs.data.productPrice+(probs.data.productPrice%10)}</div>
+                        <div className="current-price">Rs.{probs.data.productPrice}</div>
+                        <div className="original-price">Rs.{probs.data.productPrice+(probs.data.productPrice%10)}</div>
                     </div>
                 </div>
 

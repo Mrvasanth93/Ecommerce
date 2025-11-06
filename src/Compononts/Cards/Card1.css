@@ -1,12 +1,13 @@
-.card1{
-   width: 220px;
-   height: 310px;
-   min-height: fit-content;
-   box-shadow: 1px 1px 2px rgba(128, 128, 128, 0.479) , -1px 1px 2px rgba(128, 128, 128, 0.479);
-   border-radius: 5px;
-   background-color:  rgb(245, 248, 246);
+.card1 {
+    width: 220px;
+    height: 310px;
+    min-height: fit-content;
+    box-shadow: 1px 1px 2px rgba(128, 128, 128, 0.479), -1px 1px 2px rgba(128, 128, 128, 0.479);
+    border-radius: 5px;
+    background-color: rgb(245, 248, 246);
 }
-.card1 .card-top{
+
+.card1 .card-top {
     width: 100%;
     height: 45%;
     display: flex;
@@ -14,15 +15,17 @@
     justify-content: center;
     overflow: hidden;
 }
-.card1 .card-top{
+
+.card1 .card-top {
     cursor: pointer;
     position: relative;
 }
-.card1 .card-top .wishlist{
+
+.card1 .card-top .wishlist {
     border-radius: 50%;
     position: absolute;
-    top:5px;
-    right:5px;
+    top: 5px;
+    right: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -31,26 +34,33 @@
     transition: 0.2s;
     transition-timing-function: ease-in-out;
 }
-.card1 .card-top .wishlist:hover{
+
+.card1 .card-top .wishlist:hover {
     background-color: rgba(128, 128, 128, 0.274);
-    box-shadow: 0.5px 0.5px 5px snow;}
-.card1 .card-top .wishlist img{
+    box-shadow: 0.5px 0.5px 5px snow;
+}
+
+.card1 .card-top .wishlist img {
     width: 75%;
 }
-.card-top img{
+
+.card-top img {
     overflow: hidden;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
-.card1 .card-middle{
+
+.card1 .card-middle {
     padding: 15px;
     font-size: 14px;
     padding-top: 0;
     margin-top: 0;
     cursor: pointer;
     height: 35%;
+    position: relative;
 }
-.card1 .card-middle .productname{
+
+.card1 .card-middle .productname {
     color: rgba(0, 0, 0, 0.753);
     letter-spacing: 1px;
     margin-top: 10px;
@@ -59,7 +69,8 @@
     font-family: "Poppins", sans-serif;
     font-size: 13px;
 }
-.card1 .card-middle .productdesc{
+
+.card1 .card-middle .productdesc {
     font-size: 12px;
     line-height: 15px;
     text-align: left;
@@ -70,30 +81,35 @@
     letter-spacing: 1px;
     margin: 10px 0;
     margin-top: 5px;
+    text-align: justify;
 }
 
-.card-middle .price{
+.card-middle .price {
     display: flex;
     align-items: center;
-    justify-content:left;
+    justify-content: left;
     font-size: 16px;
     color: gray;
+    position: absolute;
+    bottom: 2px;
 }
-.card-middle .price .original-price{
+
+.card-middle .price .original-price {
     color: rgba(128, 128, 128, 0.596);
     text-decoration: line-through;
     font-size: 13px;
     margin-left: 7px;
 }
-.card-middle .price .current-price{
-    color: rgb(247, 12, 51);
+
+.card-middle .price .current-price {
+    color: rgba(255, 40, 76, 0.866);
     font-weight: bolder;
 }
-.card1 .card-footer{
+
+.card1 .card-footer {
     margin: 10px 5%;
-    border: 1px solid rgb(247, 12, 51);
-    color: rgb(247, 12, 51);
-    font-weight: bold;
+    border: 1px solid rgba(157, 157, 157, 0.547);
+    color: rgb(104, 104, 104);
     font-size: 14px;
     height: 35px;
     border-radius: 5px;
@@ -107,61 +123,74 @@
     width: 90%;
     margin-top: 2px;
 }
-.card1 .card-footer:hover{
-    background-color: rgb(247, 12, 51);
-    cursor: pointer;
-    color: white;
-}
-.card-footer .cart-img{
+
+
+.card-footer .cart-img {
     width: 20px;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.card-footer div{
+
+.card-footer div {
     margin-left: 3px;
     font-weight: bolder;
 }
-.card-footer div img{
+
+.card-footer div img {
     width: 90%;
 }
-@media (max-width:370px) {
-    .card1{
-        width:142px ;
+
+@media (max-width:430px) {
+    .card1 {
+        width: 142px;
         height: 240px;
     }
-    .card1 .card-middle{
+
+    .card1 .card-middle {
         padding: 5px;
         height: 45%;
     }
-    .card1 .card-middle .productname{
-        font-size: 11.5px;
-    }
-    .current-price{
-        font-size: 12px;
-    }
-    .card-middle .price .original-price{
+
+    .card1 .card-middle .productname {
         font-size: 10px;
     }
-    .card1 .card-middle .productdesc{
-        font-size: 8px;
+
+    .current-price {
+        font-size: 1px;
     }
-    .card1 .card-footer{
+
+    .card-middle .price .current-price {
+       font-size: 12px;
+    }
+
+    .card-middle .price .original-price {
+        font-size: 10px;
+    }
+
+    .card1 .card-middle .productdesc {
+        font-size: 7px;
+    }
+
+    .card1 .card-footer {
         padding: 0 5px;
     }
-    .card1 .card-footer{
-        width:90%;
+
+    .card1 .card-footer {
+        width: 90%;
         height: 25px;
         font-size: 8px;
         margin-left: 5px;
         margin-bottom: 10px;
     }
-    .card1 .card-footer .cart-img{
+
+    .card1 .card-footer .cart-img {
         width: 10px;
         height: 10px;
     }
-    .card1 .card-footer .cart-img img{
+
+    .card1 .card-footer .cart-img img {
         width: 100%;
     }
 }
