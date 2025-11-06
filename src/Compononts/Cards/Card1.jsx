@@ -7,7 +7,7 @@ const Card1 = (probs) =>{
     const path = useLocation();
     const navigate = useNavigate()
     const openProduvtView = () =>{
-        navigate(`${path.pathname}/product/${probs.data._id}`)
+        navigate(`/product/${probs.data._id}`)
     }
     return(
         <>
@@ -16,7 +16,7 @@ const Card1 = (probs) =>{
                     <div className="wishlist">
                         <img src={wishlist} alt="" />
                     </div>
-                    <img src={`http://localhost:3000/uploads/${probs.data.image}`} alt="" />
+                    <img src={`https://fastkart-backend.onrender.com/uploads/${probs.data.image}`} alt="" />
                 </div>
                 <div className="card-middle">
                     {probs.data.productName && <div className="productname">{probs.data.productName}</div>}
