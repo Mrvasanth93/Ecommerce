@@ -17,10 +17,15 @@ import Banner from "../../Compononts/Banner"
 import { useNavigate } from "react-router-dom"
 import axios from "axios"
 import { productBase, authBase } from "../../utils"
+import Loader from "../../Compononts/Loader"
 
 const Home = () => {
     const [popularProducts, setPopularProducts] = useState()
+    const [loader, setLoader] = useState(true)
     const navigate = useNavigate()
+    setTimeout(() => {
+        setLoader(false)
+    }, 3000);
     const handleNavigate = (locateTo) => {
         navigate(locateTo)
     }
@@ -44,8 +49,8 @@ const Home = () => {
             response && response.data.success == false && response.data.no_of_products == 0 && console.log("create try again page");
             response && response.data.success == false && response.data.message == "cannot get products" && console.log("create server error page");
             response && response.data.success == false && response.data.error && console.log("create server error page");
-            response && response.data.success ==  true && response.data.products &&  setPopularProducts(response.data.products)
-            
+            response && response.data.success == true && response.data.products && setPopularProducts(response.data.products)
+
         } catch (error) {
             error.message == "Network Error" && console.log("create server error page");
         }
@@ -111,10 +116,10 @@ const Home = () => {
                 </div>
             </div>
             {
-                popularProducts && <>
-                    <Products title="Popular Products" data={popularProducts}/>
+                loader ? <Loader /> : popularProducts && <>
+                    <Products title="Popular Products" data={popularProducts} />
                     <Curosel imgName={["curosel1", "curosel2"]} />
-                    <Products title="Fashion" data={popularProducts}/>
+                    <Products title="Fashion" data={popularProducts} />
                     <Products title="Electronics" data={popularProducts} />
                     <div className="services-ad">
                         <div className="ad">
@@ -124,9 +129,9 @@ const Home = () => {
                         </div>
                     </div>
                     <Products title="Beauty" data={popularProducts} />
-                    <Products title="Bags" data={popularProducts}/>
+                    <Products title="Bags" data={popularProducts} />
                     <Banner />
-                    <Products title="Footwear" data={popularProducts}/>
+                    <Products title="Footwear" data={popularProducts} />
                     <Products title="More Categories" data={popularProducts} />
                 </>
             }

@@ -10,6 +10,7 @@ const ProductView = () => {
     const getProduct = async()=>{
         const response = await axios.get(`${productBase}get-product/${location.pathname.split("/")[2]}`)
         response && response.data.success == true && response.data.product && setProduct(response.data.product)
+        
     }
     useEffect(()=>{
         getProduct()
