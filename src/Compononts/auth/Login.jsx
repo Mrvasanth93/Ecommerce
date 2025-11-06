@@ -16,7 +16,8 @@ const Login = () => {
         try {
             setMessage()
             const response = await axios.post(`${authBase}login`,{"credintials":email, password},{withCredentials:true})
-            response && response.data.success == true ? response.data.message == "login successfull" && navigate("/fastkartEcom") :
+            console.log(response);
+            response && response.data.success == true ? response.data.message == "login successfull" && navigate("/") :
             setMessage(response.data.message)
         } catch (error) {
             error.message == "Network Error" && console.log("create server error page");

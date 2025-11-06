@@ -8,7 +8,8 @@ const ProductView = () => {
     const [product,setProduct] = useState()
     const location = useLocation()
     const getProduct = async()=>{
-        const response = await axios.get(`${productBase}get-product/${location.pathname.split("/")[3]}`)
+        const response = await axios.get(`${productBase}get-product/${location.pathname.split("/")[2]}`)
+        console.log(response);
         response && response.data.success == true && response.data.product && setProduct(response.data.product)
     }
     useEffect(()=>{
