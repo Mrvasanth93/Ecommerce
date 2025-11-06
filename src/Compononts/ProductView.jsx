@@ -25,7 +25,7 @@ const ProductView = () => {
                     </div>
                     <div className="product-content">
                         <div className="product-content-img">
-                            {product && product[0].image && <img src={`http://localhost:3000/uploads/${product[0].image}`} alt="" />}
+                            {product && product[0].image && <img src={`https://fastkart-backend.onrender.com/uploads/${product[0].image}`} alt="" />}
                         </div>
                         <div className="product-content-content">
                             <div className="product-name">
