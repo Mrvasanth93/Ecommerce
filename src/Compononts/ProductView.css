@@ -175,13 +175,13 @@ h6 {
 .product-content .product-content-content .price .offer-price {
     color: tomato;
     font-weight: bolder;
-    font-size: 15px;
+    font-size: 20px;
 }
 
 .product-content .product-content-content .price .orignal-price {
     color: rgb(172, 172, 172);
     font-weight: bolder;
-    font-size: 13px;
+    font-size: 18px;
     text-decoration: line-through;
 }
 
@@ -245,7 +245,140 @@ h6 {
     border: 1px solid rgba(73, 73, 73, 0.205);
     color: rgb(0, 0, 0);
 }
-
+.cart-price{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: sticky;
+}
+.cart-price .cart{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.cart-price .cart .addremove{
+    color: rgb(255, 255, 255);
+    width: 10px;
+}
+.cart-price .btn{
+    width: 49%;
+    background-color: tomato;
+    color: white;
+    font-weight: bolder;
+    height: 35px;
+}
+.select-quantity{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: fit-content;
+    position: absolute;
+    z-index: 10;
+    right: 40px;
+    top: 730px;
+    width: 80px;
+}
+.select-quantity .add , .select-quantity .sub{
+    width: 25px;
+    height: 25px;
+    border: 1px solid rgba(87, 87, 87, 0.522);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+.select-quantity
+.review h4{
+    margin-left: 10px;
+}
+.review{
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.167);
+}
+.review .review-container{
+    margin-top: px;
+    width: 100%;
+    border-radius: 10px;
+    padding: 5px;
+}
+.review .review-container .profile-logo{
+    color:blue ;
+    margin-left:5px;
+    margin-top: 10px;
+    width: 25px;
+    height: 25px;
+    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+.review .review-container h3{
+    font-size: 10px;
+    margin-left: 5px;
+    margin-top: 10px;
+}
+.review .review-container h5{
+    color: rgb(0, 0, 0);
+    margin-left: 5px;
+    margin-right: 20px;
+    margin-top: 10px;
+    font-size: 10px;
+    font-weight: 500;
+    text-align: justify;
+    line-height: 20px;
+}
+.review .review-box{
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.456);
+    height: 40px;
+}
+.review .review-box .select-rate{
+    width: 20%;
+}
+.review .review-box .message{
+    width: 68%;
+}
+.review .review-box .review-btn{
+    width: 10%;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.review .review-box select{
+    border: none;
+    margin-left: 10px;
+    outline: none;
+    background-color: transparent;
+}
+.review .message input{
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 12px;
+    font-weight: bolder;
+    background-color: transparent;
+}
+.review .review-btn{
+    background-color: tomato;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bolder;
+    border-radius: 5px;
+}
+@media (max-width:426px) {
+    .review .review-box .message{
+        width: 65%;
+    }
+    .review .review-btn{
+        width: 100px;
+    }
+}
 @media (max-width:500px) {
     .productview .productview-container .product-content {
         flex-direction: column;
@@ -255,5 +388,10 @@ h6 {
     }
     .productview .productview-container .product-content .product-content-content{
         width: 100%;
+    }
+}
+@media (min-width:770px) {
+    .cart-price{
+        width: 50%;
     }
 }

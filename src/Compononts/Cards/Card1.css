@@ -144,8 +144,8 @@
 
 @media (max-width:430px) {
     .card1 {
-        width: 142px;
-        height: 240px;
+        width: 172px;
+        height: 260px;
     }
 
     .card1 .card-middle {
@@ -154,7 +154,7 @@
     }
 
     .card1 .card-middle .productname {
-        font-size: 10px;
+        font-size: 11px;
     }
 
     .current-price {
@@ -162,15 +162,15 @@
     }
 
     .card-middle .price .current-price {
-       font-size: 12px;
+       font-size: 13px;
     }
 
     .card-middle .price .original-price {
-        font-size: 10px;
+        font-size: 12px;
     }
 
     .card1 .card-middle .productdesc {
-        font-size: 7px;
+        font-size: 11px;
     }
 
     .card1 .card-footer {

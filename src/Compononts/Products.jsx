@@ -2,6 +2,8 @@ import { useRef } from "react";
 import Card1 from "../Compononts/Cards/Card1";
 import "./PopularProducts.css"
 const Products = (probs) => {
+    console.log(probs.isMuted);
+    
     const scrollRate = useRef()
     const handleScroll = (option) =>{
         if(option == "left"){
@@ -14,8 +16,8 @@ const Products = (probs) => {
     return (
         <>
             <div className="products">
-            <h6 className="title">{probs.title}</h6>
-            <h6 className="offer-text">Do not miss the current offers untill the end of march</h6>
+            {probs.isMuted == true ? <h6 className="title">More like this</h6> : <h6 className="title">{probs.title}</h6>}
+            {!probs.isMuted || probs.isMuted == false && <h6 className="offer-text">Do not miss the current offers untill the end of march</h6>}
                 <div className="nav-btns">
                     <div onClick={(e)=>{handleScroll("left")}} className="navleft">&lt;</div>
                     <div onClick={(e)=>{handleScroll("right")}} className="navright">&gt;</div>

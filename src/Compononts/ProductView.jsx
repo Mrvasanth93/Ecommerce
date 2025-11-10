@@ -1,20 +1,37 @@
 import "./ProductView.css"
 import sample1 from "../assets/2.jpg"
-import { useLocation } from "react-router-dom";
+import { data, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from 'axios'
 import { productBase } from "../utils";
+import Products from "./Products";
 const ProductView = () => {
     const [product,setProduct] = useState()
+    const [popularProducts, setPopularProducts] = useState()
     const location = useLocation()
     const getProduct = async()=>{
         const response = await axios.get(`${productBase}get-product/${location.pathname.split("/")[2]}`)
         response && response.data.success == true && response.data.product && setProduct(response.data.product)
         
     }
+    const handleGetProducts = async () => {
+        try {
+            const response = await axios.get(`${productBase}get-products`)
+            response && response.data.success == false && response.data.no_of_products == 0 && console.log("create try again page");
+            response && response.data.success == false && response.data.message == "cannot get products" && console.log("create server error page");
+            response && response.data.success == false && response.data.error && console.log("create server error page");
+            response && response.data.success == true && response.data.products && setPopularProducts(response.data.products)
+
+        } catch (error) {
+            error.message == "Network Error" && console.log("create server error page");
+        }
+    }
     useEffect(()=>{
         getProduct()
-    },[])
+    })
+    useEffect(()=>{
+        handleGetProducts()
+    })
     return (
         <>
             {console.log(product)
@@ -52,23 +69,54 @@ const ProductView = () => {
                             </div>
                             <div className="price">
                                 {product && product[0].productPrice && <div className="offer-price">Rs.{product[0].productPrice}</div>}
-                                {product && product[0].productPrice && <div className="orignal-price">{product[0].productPrice + (product[0].productPrice%12)}</div>}
+                                {product && product[0].productPrice && <div className="orignal-price">Rs.{product[0].productPrice + (product[0].productPrice%12)}</div>}
                             </div>
-                            <div className="add-to-cart">
-                                <div className="order-number">
-                                    <div className="order-add">-</div>
-                                    <div className="num">1</div>
-                                    <div className="order-sub">+</div>
+                            <div className="select-quantity">
+                                <div className="sub">-</div>
+                                <div className="number_of_quantity"> 1 </div>
+                                <div className="add">+</div>
+                            </div>
+                            <div className="cart-price">
+                                <div className="btn cart">
+                                    <div className="cart-btn">Add to cart</div>
                                 </div>
-                                <div className="add-to-cart-btn">
-                                    add to cart
+                                <div className="btn">Buy now</div>
+                            </div>
+                            <div className="review">
+                                <h4>Reviews</h4>
+                                <div className="review-container">
+                                    <div className="profile-logo">
+                                        N
+                                    </div>
+                                    <h3>⭐⭐⭐⭐⭐</h3>
+                                    <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, molestiae?</h5>
+                                    <hr />
+                                </div>
+                                <div className="review-container">
+                                    <div className="profile-logo">
+                                        N
+                                    </div>
+                                    <h3>⭐⭐⭐⭐⭐</h3>
+                                    <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, molestiae?</h5>
+                                    <hr />
+                                </div>
+                                <div className="review-box">
+                                    <div className="select-rate">
+                                        <select name="" id="">
+                                            <option value="">1.0</option>
+                                            <option value="">2.0</option>
+                                            <option value="">3.0</option>
+                                            <option value="">4.0</option>
+                                            <option value="">5.0</option>
+                                        </select>
+                                    </div>
+                                    <div className="message">
+                                        <input maxLength={40} type="text" placeholder="Write something" />
+                                    </div>
+                                    <div className="review-btn">add</div>
                                 </div>
                             </div>
-                            <div className="buy-now-btn">Buy now</div>
-                        </div>
-                    </div>
-                    <div className="product-content-bottom">
-                        <div className="bottom-content">
+                            {popularProducts && product[0].category && <Products isMuted={true} title={product[0].category} data={popularProducts}/>}
                         </div>
                     </div>
                 </div>
