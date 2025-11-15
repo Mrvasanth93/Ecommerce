@@ -22,7 +22,7 @@ const Nav3 = () => {
                         <img src={wishicon} alt="" className="option-img" />
                         <div className="option-text">Wishlist</div>
                     </div>
-                    <div onClick={()=>{navigate("/admin/products/create")
+                    <div onClick={()=>{navigate("/profile")
                         }} className="options">
                         <img  src={profileicon} alt="" className="option-img" />
                         <div className="option-text">Profile</div>

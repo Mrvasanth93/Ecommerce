@@ -1,37 +1,61 @@
 import "./ProductView.css"
 import sample1 from "../assets/2.jpg"
-import { data, useLocation } from "react-router-dom";
+import { data, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from 'axios'
-import { productBase } from "../utils";
+import { productBase, orderbase } from "../utils";
 import Products from "./Products";
 const ProductView = () => {
-    const [product,setProduct] = useState()
-    const [popularProducts, setPopularProducts] = useState()
+    const [product, setProduct] = useState()
     const location = useLocation()
-    const getProduct = async()=>{
+    const [showAddres, setShowAddres] = useState(false)
+    const [quantity, setQuantity] = useState(1)
+    const [errormsg, setErrorMsg] = useState()
+    const [msg, setMsg] = useState()
+    const [fullName, setFullName] = useState()
+    const [addres, setAddres] = useState()
+    const [city, setCity] = useState()
+    const [district, setDistrict] = useState()
+    const [phone, setPhone] = useState()
+    const [pinCode, setPinCode] = useState()
+    const navigate = useNavigate()
+    const getProduct = async () => {
         const response = await axios.get(`${productBase}get-product/${location.pathname.split("/")[2]}`)
         response && response.data.success == true && response.data.product && setProduct(response.data.product)
-        
     }
-    const handleGetProducts = async () => {
-        try {
-            const response = await axios.get(`${productBase}get-products`)
-            response && response.data.success == false && response.data.no_of_products == 0 && console.log("create try again page");
-            response && response.data.success == false && response.data.message == "cannot get products" && console.log("create server error page");
-            response && response.data.success == false && response.data.error && console.log("create server error page");
-            response && response.data.success == true && response.data.products && setPopularProducts(response.data.products)
+    const handleMakeOrder = async () => {
+        const afterSucces = () => {
+            setMsg("Order succussfully")
+            setErrorMsg("")
+            setTimeout(() => {
+                navigate("/")
+            }, 1000);
+        }
+        if (showAddres == false) {
+            setShowAddres(true)
+        }
+        else {
+            const response = await axios.post(`${orderbase}create-order`,
+                {
+                    "orderItems": [
+                        { "product": location.pathname.split("/")[2], "quantity": quantity }
+                    ],
+                    fullName,
+                    addres,
+                    city,
+                    district,
+                    phone,
+                    pinCode
+                }, { withCredentials: true })
+            response && response.data.success == false && setErrorMsg(response.data.message)
+            console.log(response);
 
-        } catch (error) {
-            error.message == "Network Error" && console.log("create server error page");
+            response && response.data.success == true && afterSucces()
         }
     }
-    useEffect(()=>{
+    useEffect(() => {
         getProduct()
-    })
-    useEffect(()=>{
-        handleGetProducts()
-    })
+    }, [])
     return (
         <>
             {console.log(product)
@@ -69,18 +93,66 @@ const ProductView = () => {
                             </div>
                             <div className="price">
                                 {product && product[0].productPrice && <div className="offer-price">Rs.{product[0].productPrice}</div>}
-                                {product && product[0].productPrice && <div className="orignal-price">Rs.{product[0].productPrice + (product[0].productPrice%12)}</div>}
+                                {product && product[0].productPrice && <div className="orignal-price">Rs.{product[0].productPrice + (product[0].productPrice % 12)}</div>}
                             </div>
                             <div className="select-quantity">
-                                <div className="sub">-</div>
-                                <div className="number_of_quantity"> 1 </div>
-                                <div className="add">+</div>
+                                <div onClick={() => { quantity == 1 ? setQuantity(1) : setQuantity(quantity - 1) }} className="sub">-</div>
+                                <div className="number_of_quantity"> {quantity} </div>
+                                <div onClick={() => { setQuantity(quantity + 1) }} className="add">+</div>
                             </div>
+                            {
+
+                                showAddres == true && <div className="addres">
+                                    <h6 className="heading">Shipping addres</h6>
+                                    <div className="input">
+                                        <input value={fullName} onChange={(e) => { setFullName(e.target.value) }} type="text" placeholder="fullname" />
+                                    </div>
+                                    <div className="input">
+                                        <input value={addres} onChange={(e) => { setAddres(e.target.value) }} type="text" placeholder="addres" />
+                                    </div>
+                                    <div className="input">
+                                        <input value={city} onChange={(e) => { setCity(e.target.value) }} type="text" placeholder="city" />
+                                    </div>
+                                    <div className="input">
+                                        <input value={district} onChange={(e) => { setDistrict(e.target.value) }} type="text" placeholder="district" />
+                                    </div>
+                                    <div className="input">
+                                        <input value={phone} onChange={(e) => { setPhone(e.target.value) }} type="text" placeholder="phone" />
+                                    </div>
+                                    <div className="input">
+                                        <input value={pinCode} onChange={(e) => { setPinCode(e.target.value) }} type="text" placeholder="pincode" />
+                                    </div>
+                                    <h6 className="heading">Order details</h6>
+                                    <h6 className="details">Payment method : Cash On Delivery</h6>
+                                    <h6 className="details">
+                                        no of quantity :  {quantity}
+                                    </h6>
+                                    <h6 className="details">
+                                        product price : Rs.{product[0].productPrice}
+                                    </h6>
+                                    <h6 className="details">
+                                        shipping price : Rs.60
+                                    </h6>
+                                    <h6 className="details">
+                                        total price : {(quantity * product[0].productPrice) + 60}
+                                    </h6>
+                                    {
+                                        errormsg && <div className="error-msg">
+                                            <h5>{errormsg}</h5>
+                                        </div>
+                                    }
+                                    {
+                                        msg && <div className="msg">
+                                            <h5>{msg}</h5>
+                                        </div>
+                                    }
+                                </div>
+                            }
                             <div className="cart-price">
                                 <div className="btn cart">
                                     <div className="cart-btn">Add to cart</div>
                                 </div>
-                                <div className="btn">Buy now</div>
+                                <div onClick={() => { handleMakeOrder() }} className="btn">Buy now</div>
                             </div>
                             <div className="review">
                                 <h4>Reviews</h4>
@@ -116,7 +188,6 @@ const ProductView = () => {
                                     <div className="review-btn">add</div>
                                 </div>
                             </div>
-                            {popularProducts && product[0].category && <Products isMuted={true} title={product[0].category} data={popularProducts}/>}
                         </div>
                     </div>
                 </div>

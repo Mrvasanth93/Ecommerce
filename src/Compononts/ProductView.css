@@ -371,6 +371,79 @@ h6 {
     font-weight: bolder;
     border-radius: 5px;
 }
+.addres{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    margin-bottom: 20px;
+    border: 1px solid rgba(128, 128, 128, 0.167);
+    padding: 10px;
+    border-radius: 5px;
+}
+.addres .input{
+    width: 100%;
+    height: 50px;
+    margin-top: 10px;
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.074);
+    border-radius: 5px;
+}
+.addres .input input{
+    width: 100%;
+    background-color: transparent;
+    height: 100%;
+    border: none;
+    outline: none;
+    padding-left: 10px;
+    color: rgba(0, 0, 0, 0.623);
+    font-size: 12px;
+}
+.addres .input input::placeholder{
+    color: rgba(0, 0, 0, 0.185);
+    font-size: 12px;
+}
+.addres .error-msg{
+    margin-top: 10px;
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    background-color: rgba(255, 99, 71, 0.282);
+    border: 1px solid tomato;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.addres .error-msg h5{
+    color: rgba(255, 0, 0, 0.721);
+    font-size: 15px;
+}
+.addres .msg{
+    margin-top: 10px;
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    background-color: rgba(71, 255, 123, 0.282);
+    border: 1px solid rgb(6, 85, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.addres .msg h5{
+    color: rgba(1, 53, 19, 0.721);
+    font-size: 15px;
+}
+.addres .heading{
+    color: red;
+    width: 100%;
+    padding-left: 5px;
+}
+.details{
+    width: 100%;
+    padding-left: 5px;
+    color: green;
+}
 @media (max-width:426px) {
     .review .review-box .message{
         width: 65%;

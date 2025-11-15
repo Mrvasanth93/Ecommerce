@@ -41,7 +41,7 @@ const Nav1 = () => {
                 </div>
                 <div className="nav-1-right">
                     {
-                        userName ? <div className="profile-logo">
+                        userName ? <div onClick={()=>{navigate("/profile")}} className="profile-logo">
                             <h5>{userName[0]}</h5>
                         </div> : <div className="auth">
                             <div className="login"> <NavLink className="link" to="/login">Login</NavLink> </div>

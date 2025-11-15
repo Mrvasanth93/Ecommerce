@@ -20,6 +20,8 @@ import Wellness from './Pages/Wellness/Wellness'
 import ProductView from './Compononts/ProductView'
 import Nav3 from './Compononts/nav/Nav3'
 import CreateProduct from './Pages/Product/CreateProduct'
+import Profile from './Pages/Profile/Profile'
+import MyOrders from './Pages/MyOrders/MyOrders'
 
 function App() {
   return (
@@ -39,6 +41,8 @@ function App() {
         <Route path='/jwells' element={<Jwells/>}/>
         <Route path='/footwear' element={<FootWear/>}/>
         <Route path='/admin/products/create' element={<CreateProduct/>}/>
+        <Route path='/profile' element={<Profile/>}/>
+        <Route path='/profile/my-orders' element={<MyOrders/>}/>
         <Route path="/product/:productid" element={<ProductView/>}/>
       </Routes>
       <Footer/>
