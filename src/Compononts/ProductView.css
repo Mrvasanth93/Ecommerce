@@ -275,7 +275,7 @@ h6 {
     position: absolute;
     z-index: 10;
     right: 40px;
-    top: 730px;
+    top: 765px;
     width: 80px;
 }
 .select-quantity .add , .select-quantity .sub{
@@ -305,12 +305,25 @@ h6 {
     padding: 5px;
 }
 .review .review-container .profile-logo{
-    color:blue ;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    height: fit-content;
+}
+.review .review-container .profile-logo .reviewer-name{
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: rgb(201, 201, 201,0.662);
+}
+.review .review-container .profile-logo .left{
     margin-left:5px;
     margin-top: 10px;
     width: 25px;
     height: 25px;
-    background-color: aliceblue;
+    background-color:  rgba(201, 201, 201, 0.662);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -326,10 +339,10 @@ h6 {
     margin-left: 5px;
     margin-right: 20px;
     margin-top: 10px;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     text-align: justify;
-    line-height: 20px;
+    line-height: 25px;
 }
 .review .review-box{
     display: flex;
@@ -344,7 +357,7 @@ h6 {
     width: 68%;
 }
 .review .review-box .review-btn{
-    width: 10%;
+    width: 15%;
     margin-left: 10px;
     margin-right: 10px;
 }
@@ -363,13 +376,13 @@ h6 {
     background-color: transparent;
 }
 .review .review-btn{
-    background-color: tomato;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
     font-weight: bolder;
     border-radius: 5px;
+    background-color: rgb(230, 230, 230);
+    height: 25px;
 }
 .addres{
     width: 100%;
@@ -467,4 +480,7 @@ h6 {
     .cart-price{
         width: 50%;
     }
+}
+@media (min-width:499px) {
+    
 }

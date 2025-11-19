@@ -3,40 +3,36 @@ import Card2 from "../../Compononts/Cards/Card2";
 import samplelogo from "../../assets/icons/icons8-cart-24.png"
 import "../pageCommon.css"
 import { useEffect } from "react";
+import { productBase } from "../../utils";
+import axios from "axios";
 const Wellness = () => {
-    const [view,setView] = useState("table")
-    const handleView = (view) =>{
-        if(view == "table"){
-            setView("table")
-        }
-        else if(view == "grid"){
-            setView("grid")
+    const [popularProducts, setPopularProducts] = useState()
+    const handleGetProducts = async () => {
+        try {
+            const response = await axios.get(`${productBase}get-products`)
+            response && response.data.success == false && response.data.no_of_products == 0 && console.log("create try again page");
+            response && response.data.success == false && response.data.message == "cannot get products" && console.log("create server error page");
+            response && response.data.success == false && response.data.error && console.log("create server error page");
+            response && response.data.success == true && response.data.products && setPopularProducts(response.data.products)
+        } catch (error) {
+            error.message == "Network Error" && console.log("create server error page");
         }
     }
     useEffect(()=>{
-    },[view])
+        handleGetProducts()
+    },[])
     return (
         <>
             <div className="sort">
                 <div className="sort-container">
-                    <div className="left">
-                        <div onClick={()=>{handleView("table")}}>
-                            <img src={samplelogo} alt="" />
-                        </div>
-                        <div onClick={()=>{handleView("grid")}}>
-                            <img src={samplelogo} alt="" />
-                        </div>
-                    </div>
+                    
                     <div className="right">
                         Sort By : <div className="sorts">Name , A to z</div>
                     </div>
                 </div>
             </div>
-            <div className="fashion">
-                <Card2 width={view}/>
-                <Card2 width={view}/>
-                <Card2 width={view}/>
-                <Card2 width={view}/>
+           <div className="fashion">
+                {popularProducts && popularProducts.map((data)=>{ return data.category == "Wellness" && <Card2 data={data}/>})}
             </div>
         </>
     )

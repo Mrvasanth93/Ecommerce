@@ -23,9 +23,6 @@ const Home = () => {
     const [popularProducts, setPopularProducts] = useState()
     const [loader, setLoader] = useState(true)
     const navigate = useNavigate()
-    setTimeout(() => {
-        setLoader(false)
-    }, 1000);
     const handleNavigate = (locateTo) => {
         navigate(locateTo)
     }
@@ -116,7 +113,7 @@ const Home = () => {
                 </div>
             </div>
             {
-                loader ? <Loader /> : popularProducts && <>
+                !popularProducts ? <Loader /> : popularProducts && <>
                     <Products title="Popular Products" data={popularProducts} />
                     <Curosel imgName={["curosel1", "curosel2"]} />
                     <Products title="Fashion" data={popularProducts} />

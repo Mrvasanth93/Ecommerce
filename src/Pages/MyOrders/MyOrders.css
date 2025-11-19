@@ -6,7 +6,7 @@
     height: fit-content;
 }
 .order .order-container{
-    width: 95%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -26,11 +26,11 @@
     align-items: start;
     justify-content: start;
     flex-direction: column;
-    width: 95%;
+    width: 100%;
     margin-top: 20px;
-    border: 1px solid rgba(0, 0, 0, 0.204);
     padding: 10px;
     border-radius: 10px;
+    box-shadow: 2px 2px 5px #cfcfcf;
 }
 .order .order-container .product .top{
     display: flex;

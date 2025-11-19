@@ -3,6 +3,7 @@ import sample from "../../assets/img (8).jpg"
 import wishlist from "../../assets/icons/icons8-heart-26 (1).png"
 import cartImg from "../../assets/icons/icons8-cart-24.png"
 import { useLocation, useNavigate } from "react-router-dom"
+import { imageBase } from "../../utils"
 const Card1 = (probs) =>{
     const path = useLocation();
     const navigate = useNavigate()
@@ -16,7 +17,7 @@ const Card1 = (probs) =>{
                     <div className="wishlist">
                         <img src={wishlist} alt="" />
                     </div>
-                    <img src={`https://fastkart-backend.onrender.com/uploads/${probs.data.image}`} alt="" />
+                    <img src={`${imageBase}${probs.data.image}`} alt="" />
                 </div>
                 <div className="card-middle">
                     {probs.data.productName && <div className="productname">{probs.data.productName}</div>}

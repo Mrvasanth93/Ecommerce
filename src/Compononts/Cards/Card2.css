@@ -1,103 +1,111 @@
-.card2{
-    max-width:310px;
+.card2 {
+    max-width: 310px;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-.card2 .card2-container{
-    position: relative;
-    cursor: pointer;
-    display: flex;
-    align-items: start;
-    justify-content: center;
-    background-color: rgba(245, 248, 246, 0.705);
-    border-radius:5px;
-    box-shadow: 0.5px 0.5px 3px rgba(0, 0, 0, 0.171),
-                -0.5px -0.5px 3px rgba(0, 0, 0, 0.171);
-}
-.card2 .card2-container .card-top{
-    width: 100%;
-    height:280px;
-    padding: 15px;
-    padding-bottom: 0;
-    height: fit-content;
-}
-.card2 .card2-container .card-top .product-img{
-    height: 100%;
-    overflow: hidden;
-    display: flex; 
-    align-items: start;
-    border-radius: 10px;
-}
-.card2 .card2-container .card-top .product-img img{
-    width: 100%;
-    border-radius: 10px;
-}
-.card2 .card2-container .product-content{
-    padding: 10px;
-    display: flex;
-    align-items: start;
-    justify-content: space-around;
-    flex-direction: column;
+    margin-bottom: 10px;
 }
 
-.card2 .card2-container .product-content h6 ,h5 , h4{
-   margin: 0px 0;
-   padding: 0;
+.card2 .card2-container {
+    cursor: pointer;
+    background-color: rgba(245, 248, 246, 0.705);
+    border-radius: 5px;
+    min-height: 350px;
+    position: relative;
 }
-.card2 .card2-container .product-content h6{
+
+.card2-container .card-top {
+    height: 150px;
+    padding: 10px;
+    margin-top: 10px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.card2-container .card-top img {
+    width: 100%;
+}
+
+.card2 .card2-container .product-content {
+    padding: 10px;
+    width: 100%;
+}
+
+.card2 .card2-container .product-content h6 {
     letter-spacing: 1px;
-    font-size: 11px;
-    line-height: 20px;
+    font-size: 8px;
     text-align: left;
     color: rgba(0, 0, 0, 0.61);
-    font-family:"Poppins", sans-serif;;
+    font-family: "Poppins", sans-serif;
 }
-.card2 .card2-container .product-content .ratings{
+
+.card2 .card2-container .product-content .ratings {
     color: black;
+    padding-top: 5px;
+    position: absolute;
+    bottom: 80px;
 }
-.card2 .card2-container .product-content .price{
+
+.card2 .card2-container .product-content .price {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 10px;
+    position: absolute;
+    bottom: 50px;
 }
-.card2 .card2-container .product-content .price .offer-price{
-    font-family:"Poppins", sans-serif;
+
+.card2 .card2-container .product-content .product-name {
+    font-size: 11px;
+}
+
+.card2 .card2-container .product-content .price .offer-price {
+    font-family: "Poppins", sans-serif;
     font-size: 15px;
     font-weight: bolder;
     color: rgb(255, 47, 82);
 }
-.card2 .card2-container .product-content .price .orignal-price{
-    font-family:"Poppins", sans-serif;
+
+.card2 .card2-container .product-content .price .orignal-price {
+    font-family: "Poppins", sans-serif;
     font-size: 12px;
     font-weight: bolder;
-    color: rgba(0, 0, 0, 0.384);
     text-decoration: line-through;
+    margin-left: 10px;
+    margin-top: 0px;
 }
 
-.card2 .card2-container .add-to-cart{
-    border: 1px solid rgb(255, 20, 59);
-    width: 93%;
-    margin: 0 3%;
-    margin-bottom: 15px;
+.card2 .card2-container .product-content .product-desc {
+    font-size: 10px;
+    line-height: 15px;
+    color: rgba(0, 0, 0, 0.408);
+}
+
+.card2 .card2-container .add-cart-btn {
+    width: 100%;
+    padding: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
-    height:30px;
-    border-radius: 5px;
-    margin-top: 50px;
+    height: fit-content;
+    margin-top: -15px;
+    position: absolute;
+    bottom: 0;
 }
-.card2 .card2-container .add-to-cart h6{
-    width: 100%;
-    margin: 0;
+
+.card2 .card2-container .add-cart-btn h6 {
+    border: 1px solid tomato;
+    width: 95%;
     text-align: center;
-    font-weight: bolder;
-    color: rgb(255, 20, 59);
-    font-size: 14px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: rgba(255, 99, 71, 0.37);
+    color: red;
 }
+
 @media (max-width:635px) {
     .card2 {
-        max-width: 90%;
+        max-width: 45%;
     }
 }
