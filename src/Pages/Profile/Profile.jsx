@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom"
-import "./profile.css"
+import "./Profile.css"
 import bg from "../../assets/img (4).avif"
 import Profile from "../../assets/img (1).webp"
 import axios from "axios"
