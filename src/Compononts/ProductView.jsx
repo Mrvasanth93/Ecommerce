@@ -49,7 +49,6 @@ const ProductView = () => {
                     pinCode
                 }, { withCredentials: true })
             response && response.data.success == false && setErrorMsg(response.data.message)
-            console.log(response);
 
             response && response.data.success == true && afterSucces()
         }

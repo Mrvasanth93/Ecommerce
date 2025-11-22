@@ -19,14 +19,11 @@ const Bags = () => {
             response && response.data.success == false && response.data.error && console.log("create server error page");
             response && response.data.success == true && response.data.products && setPopularProducts(response.data.products)
         } catch (error) {
-            error.message == "Network Error" ? console.log("create server error page"):
-            console.log(error);
+            error.message == "Network Error" && console.log("create server error page")
         }
     }
     useEffect(()=>{
         handleGetProducts()
-        console.log("hello");
-        
     },[])
     return (
         <>

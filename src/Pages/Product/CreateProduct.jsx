@@ -55,7 +55,6 @@ const CreateProduct = () => {
                 })
               
             response && response.data && response.data.message == "product created" && afterCreated()
-            console.log(response);
             
         } catch (error) {
             console.log(error);

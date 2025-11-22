@@ -13,12 +13,10 @@ const Nav1 = () => {
     const checkAuth = async () => {
         try {
             const response = await axios.get(`${authBase}profile`, { withCredentials: true })
-            response && response.data.success == true ? response.data.user && setUserName(response.data.user.fullName) : console.log(response);
+            response && response.data.success == true && response.data.user && setUserName(response.data.user.fullName)
 
 
         } catch (error) {
-            console.log(error);
-
         }
     }
     useEffect(() => {

@@ -13,7 +13,6 @@ const Serch = () => {
     const handleGetProducts = async (val) => {
         try {
             const response = await axios.get(`${productBase}serch/${val}`, { withCredentials: true })
-            console.log(response);
             response && response.data.success == false && response.data.no_of_products == 0 && console.log("create try again page");
             response && response.data.success == false && response.data.message == "cannot get products" && console.log("create server error page");
             response && response.data.success == false && response.data.error && console.log("create server error page");
@@ -24,7 +23,6 @@ const Serch = () => {
         }
     }
     useEffect(() => {
-        console.log(keyword);
     }, [keyword])
     return (
         <>

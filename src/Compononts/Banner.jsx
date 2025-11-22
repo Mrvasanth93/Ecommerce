@@ -20,7 +20,6 @@ const Banner = (probs) =>{
     })
     return(
         <>
-        {console.log(images)}
            <div className="banner">
                 <div className="banner-container">
                     <img src={images[image]} alt="" />

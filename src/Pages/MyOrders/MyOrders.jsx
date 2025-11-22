@@ -28,10 +28,8 @@ const MyOrders = () => {
         <div className="order">
             <div className="order-container">
                 <h5 className="title">My orders</h5>
-                {console.log(orders)}
                 {
                     orders && orders.map((data, i) => {
-                        console.log(i);
                         return <div className="product">
                             <div className="top">
                                 <div className="left">
