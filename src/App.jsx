@@ -22,6 +22,8 @@ import Nav3 from './Compononts/nav/Nav3'
 import CreateProduct from './Pages/Product/CreateProduct'
 import Profile from './Pages/Profile/Profile'
 import MyOrders from './Pages/MyOrders/MyOrders'
+import MyCart from './Pages/MyCart/MyCart'
+import Serch from './Pages/Serch/Serch'
 
 function App() {
   return (
@@ -43,6 +45,8 @@ function App() {
         <Route path='/admin/products/create' element={<CreateProduct/>}/>
         <Route path='/profile' element={<Profile/>}/>
         <Route path='/profile/my-orders' element={<MyOrders/>}/>
+        <Route path='/profile/my-cart' element={<MyCart/>}/>
+        <Route path='/serch' element={<Serch/>}/>
         <Route path="/product/:productid" element={<ProductView/>}/>
       </Routes>
       <Footer/>

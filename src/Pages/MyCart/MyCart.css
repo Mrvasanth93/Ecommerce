@@ -1,0 +1,145 @@
+.order{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(252, 203, 211, 0.205);
+    height: fit-content;
+}
+.order .order-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    margin: 10px;
+    background-color: rgb(255, 255, 255);
+    padding: 1%;
+    border-radius: 5px;
+    box-shadow: 0.5px 0px 2px rgba(219, 219, 219, 0.356),
+                -0.5px 0px 2px rgba(219, 219, 219, 0.356);
+    padding: 0 15px;              
+    padding-bottom: 30px;
+    min-height:80vh;
+}
+.order .order-container .product{
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px #cfcfcf;
+}
+.order .order-container .product .top{
+    display: flex;
+    align-items: start;
+    width: 100%;
+}
+.order .order-container .product .left{
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+}
+.order .order-container .product .left .product-img{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.order .order-container .product .left .product-img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+.order .order-container .product .right{
+    margin-left: 10px;
+    display: flex;
+    align-items:start;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 70%;
+}
+.order .order-container .product .right .options{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.right h6{
+    margin-top: 10px;
+}
+.options h6{
+    border: 1px solid red;
+    padding: 4px;
+    border-radius: 2px;
+    background-color: rgba(255, 99, 71, 0.508);
+    color: white;
+    font-size: 11px;
+    color: rgb(184, 66, 66);
+}
+.order .order-container .product .bottom{
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+}
+.order .order-container .product .bottom .status-bar{
+    width: 0%;
+    margin-left: 5px;
+    height: 3px;
+    background-color: rgb(38, 255, 121);
+    margin-top: 10px;
+    border-radius: 10px;
+}
+.order .order-container .product .bottom .status-text{
+    margin-top: 10px;
+    display: flex;
+    width: 98%;
+    margin-left: 5px;
+    font-size: 10px;
+    align-items: start;
+    justify-content: space-between;
+}
+.heading{
+    margin-top: 15px;
+    padding-left: 5px;
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.688);
+}
+.qunatityandremove{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    width: 100%;
+}
+.qunatityandremove .quantity{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.qunatityandremove .quantity .btn{
+    width: 20px;
+    height: 22px;
+    background-color: tomato;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: white;
+}
+.ordernow-btn{
+    width: 100%;
+    border: 1px solid rgb(255, 0, 0);
+    margin-top: 10px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 99, 71, 0.67);
+    color: red;
+    border-radius: 5px;
+}

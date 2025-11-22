@@ -18,7 +18,10 @@ import { useNavigate } from "react-router-dom"
 import axios from "axios"
 import { productBase, authBase } from "../../utils"
 import Loader from "../../Compononts/Loader"
-
+import banner1 from "../../assets/6.jpg"
+import banner2 from "../../assets/banner5.jpg"
+import banner3 from "../../assets/banner1.jpg"
+import banner4 from "../../assets/banner2.jpg"
 const Home = () => {
     const [popularProducts, setPopularProducts] = useState()
     const [loader, setLoader] = useState(true)
@@ -115,7 +118,7 @@ const Home = () => {
             {
                 !popularProducts ? <Loader /> : popularProducts && <>
                     <Products title="Popular Products" data={popularProducts} />
-                    <Curosel imgName={["curosel1", "curosel2"]} />
+                    <Banner data={[banner1,banner2]}/>
                     <Products title="Fashion" data={popularProducts} />
                     <Products title="Electronics" data={popularProducts} />
                     <div className="services-ad">
@@ -127,7 +130,7 @@ const Home = () => {
                     </div>
                     <Products title="Beauty" data={popularProducts} />
                     <Products title="Bags" data={popularProducts} />
-                    <Banner />
+                    <Banner data={[banner3,banner4]} />
                     <Products title="Footwear" data={popularProducts} />
                     <Products title="More Categories" data={popularProducts} />
                 </>

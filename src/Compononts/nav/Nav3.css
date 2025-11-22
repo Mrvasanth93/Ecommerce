@@ -2,7 +2,7 @@
     position: sticky;
     z-index: 102;
     bottom: 0px;
-    height: 55px;
+    height: 65px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -10,7 +10,7 @@
 }
 .nav-3-container{
     width: 100%;
-    background-color: rgba(220, 220, 220, 0.932);
+    background-color: rgba(220, 220, 220, 0.989);
     height: 100%;
     display: flex;
     align-items: center;

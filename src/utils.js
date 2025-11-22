@@ -1,7 +1,7 @@
-export const productBase = "https://fastkart-backend.onrender.com/product/"
+export const productBase = "http://localhost:3000/product/"
 
-export const orderbase = "https://fastkart-backend.onrender.com/order/"
+export const orderbase = "http://localhost:3000/order/"
 
-export const authBase = "https://fastkart-backend.onrender.com/auth/"
+export const authBase = "http://localhost:3000/auth/"
 
-export const  imageBase = "https://fastkart-backend.onrender.com/uploads/"
+export const  imageBase = "http://localhost:3000/uploads/"

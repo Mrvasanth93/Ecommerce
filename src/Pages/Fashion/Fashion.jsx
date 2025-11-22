@@ -1,12 +1,16 @@
 import { useState } from "react";
 import Card2 from "../../Compononts/Cards/Card2";
-import samplelogo from "../../assets/icons/icons8-cart-24.png"
 import "../pageCommon.css"
 import { useEffect } from "react";
 import axios from "axios";
 import { productBase } from "../../utils";
+import { useNavigate } from "react-router-dom";
 const Fashion = () => {
     const [popularProducts, setPopularProducts] = useState()
+    const navigate = useNavigate()
+    const handleNavigate = (path) =>{
+        navigate(path)
+    }
     const handleGetProducts = async () => {
         try {
             const response = await axios.get(`${productBase}get-products`)

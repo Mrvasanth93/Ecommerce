@@ -4,7 +4,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
 }
 
 .productview .productview-container {
@@ -275,7 +274,7 @@ h6 {
     position: absolute;
     z-index: 10;
     right: 40px;
-    top: 765px;
+    top: 730px;
     width: 80px;
 }
 .select-quantity .add , .select-quantity .sub{
@@ -455,7 +454,18 @@ h6 {
 .details{
     width: 100%;
     padding-left: 5px;
-    color: green;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.total h6{
+    font-size: 13px;
+    color: black;
+}
+.hr-line{
+    color:"black";
+    border:1px solid black;
+    width: 100%;
 }
 @media (max-width:426px) {
     .review .review-box .message{

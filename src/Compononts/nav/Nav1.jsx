@@ -52,7 +52,7 @@ const Nav1 = () => {
                         <div className="wish">
                             <img src={wishlist} alt="" />
                         </div>
-                        <div title="Cart" className="cart">
+                        <div onClick={()=>{navigate("/profile/my-cart")}} title="Cart" className="cart">
                             <img src={cart} alt="" />
                         </div>
                     </div>

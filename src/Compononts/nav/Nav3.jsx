@@ -14,7 +14,8 @@ const Nav3 = () => {
                         <img src={ordericon} alt="" className="option-img" />
                         <div className="option-text">Orders</div>
                     </div>
-                    <div className="options">
+                    <div onClick={()=>{navigate("/serch")
+                        }} className="options">
                         <img src={findicon} alt="" className="option-img" />
                         <div className="option-text">Serch</div>
                     </div>

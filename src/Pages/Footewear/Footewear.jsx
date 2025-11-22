@@ -5,8 +5,13 @@ import "../pageCommon.css"
 import { useEffect } from "react";
 import { productBase } from "../../utils";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 const FootWear = () => {
     const [popularProducts, setPopularProducts] = useState()
+    const navigate = useNavigate()
+    const handleNavigate = (path) =>{
+        navigate(path)
+    }
     const handleGetProducts = async () => {
         try {
             const response = await axios.get(`${productBase}get-products`)

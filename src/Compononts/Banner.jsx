@@ -3,8 +3,8 @@ import banner1 from "../assets/banner1.jpg"
 import banner2 from "../assets/banner2.jpg"
 import { useState } from "react"
 import { useEffect } from "react"
-const Banner = () =>{
-    const [images,setImages] = useState([banner1,banner2]);
+const Banner = (probs) =>{
+    const [images,setImages] = useState(probs.data);
     const [image,setImage] = useState(1);
     useEffect(()=>{
         const intervel = setInterval(() => {
@@ -20,6 +20,7 @@ const Banner = () =>{
     })
     return(
         <>
+        {console.log(images)}
            <div className="banner">
                 <div className="banner-container">
                     <img src={images[image]} alt="" />

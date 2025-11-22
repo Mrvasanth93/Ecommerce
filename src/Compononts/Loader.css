@@ -5,16 +5,19 @@
     align-items: center;
     justify-content: center;
 }
-.loader{
-    width: 40px;
-    height: 40px;
-    border: 4px solid rgb(255, 141, 141);
-    border-radius: 50%;
-    border-bottom: 4px solid rgb(255, 0, 106);
-    animation: spin 1s linear infinite;
-
+.loader-border{
+  width: 170px;
+  height: 2px;
+  background-color: rgb(212, 212, 212);
+}
+.loader-border .loader{
+  height: 2px;
+  width: 30px;
+  background-color: rgba(0, 0, 0, 0.753);
+  animation: spin 2s linear infinite;
 }
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {transform: translateX(0px);}
+  25% {transform: translateX(70px);}
+  50%{transform: translateX(140px);}
 }

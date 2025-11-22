@@ -3,7 +3,9 @@ const Loader = () => {
     return (
         <>
             <div className="loader-container">
-                <span className="loader"></span>
+                <div className="loader-border">
+                    <div className="loader"></div>
+                </div>
             </div>
         </>
     )

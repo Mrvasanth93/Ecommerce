@@ -123,19 +123,28 @@ const ProductView = () => {
                                             <input value={pinCode} onChange={(e) => { setPinCode(e.target.value) }} type="text" placeholder="pincode" />
                                         </div>
                                         <h6 className="heading">Order details</h6>
-                                        <h6 className="details">Payment method : Cash On Delivery</h6>
-                                        <h6 className="details">
-                                            no of quantity :  {quantity}
-                                        </h6>
-                                        <h6 className="details">
-                                            product price : Rs.{product[0].productPrice}
-                                        </h6>
-                                        <h6 className="details">
-                                            shipping price : Rs.60
-                                        </h6>
-                                        <h6 className="details">
-                                            total price : {(quantity * product[0].productPrice) + 60}
-                                        </h6>
+                                        <h6 className="details"> </h6>
+                                        <div className="details">
+                                            <h6>Payment method :</h6>
+                                            <h6>Cash On Delivery</h6>
+                                        </div>
+                                        <div className="details">
+                                            <h6>No of quantity :</h6>
+                                            <h6>{quantity}</h6>
+                                        </div>
+                                        <div className="details">
+                                            <h6>Item per price :</h6>
+                                            <h6>Rs.{product[0].productPrice}</h6>
+                                        </div>
+                                        <div className="details">
+                                            <h6>Shipping price :</h6>
+                                            <h6>Rs.60</h6>
+                                        </div>
+                                        <hr className="hr-line"/>
+                                        <div className="details total">
+                                            <h6>Total price :</h6>
+                                            <h6>Rs.{(quantity * product[0].productPrice) + 60}</h6>
+                                        </div>
                                         {
                                             errormsg && <div className="error-msg">
                                                 <h5>{errormsg}</h5>
