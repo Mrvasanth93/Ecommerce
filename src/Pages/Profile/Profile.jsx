@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom"
 import "./Profile.css"
 import bg from "../../assets/img (4).avif"
-import Profile from "../../assets/img (1).webp"
+import Profileimg from "../../assets/img (1).webp"
 import axios from "axios"
 import { authBase } from '../../utils'
 import { useEffect, useState } from "react"
@@ -47,7 +47,7 @@ const Profile = () => {
                         <div className="background">
                             <img src={bg} alt="" />
                             <div className="profile-icon">
-                                <img src={profile} alt="" />
+                                <img src={Profileimg} alt="" />
                             </div>
                             <div className="profile-details">
                                 <h5 className="name">Vasanth</h5>
