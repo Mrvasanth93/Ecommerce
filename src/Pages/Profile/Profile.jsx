@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom"
 import "./profile.css"
 import bg from "../../assets/img (4).avif"
-import profile from "../../assets/img (1).webp"
+import Profile from "../../assets/img (1).webp"
 import axios from "axios"
 import { authBase } from '../../utils'
 import { useEffect, useState } from "react"
