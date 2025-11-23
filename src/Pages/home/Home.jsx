@@ -32,12 +32,15 @@ const Home = () => {
     const handleIsAuthenticated = async () => {
         try {
             const response = await axios.get(`${authBase}profile`, { withCredentials: true })
+            console.log(response);
             response && response.data.success == false && response.data.message == "continue with login" && handleNavigate("/login")
             response && response.data.success == false && response.data.message == "cannot find user" && handleNavigate("/login")
             response && response.data.success == false && response.data.message == "un Authorized token" && handleNavigate("/login")
             response && response.data.success == true && response.data.user && handleGetProducts()
 
         } catch (error) {
+            console.log(error);
+            
             error.message == "Network Error" && console.log("create server error page");
             error.message == "Request failed with status code 404" && console.log("create server error page");
 

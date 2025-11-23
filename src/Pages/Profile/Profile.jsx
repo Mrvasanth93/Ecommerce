@@ -44,7 +44,7 @@ const Profile = () => {
     return (
         <>
             {
-                authenticated && <div className="profile">
+                authenticated == true && <div className="profile">
                     <div className="profile-container">
                         <div className="background">
                             <img src={bg} alt="" />
