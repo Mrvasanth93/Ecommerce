@@ -15,7 +15,6 @@ const Profile = () => {
         try {
             const response = await axios.get(`${authBase}profile`, { withCredentials: true })
             console.log(response);
-            
             response && response.data.success == false && response.data.message == "continue with login" && handleNavigate("/login")
             response && response.data.success == false && response.data.message == "cannot find user" && handleNavigate("/login")
             response && response.data.success == false && response.data.message == "un Authorized token" && handleNavigate("/login")
