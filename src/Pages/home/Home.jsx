@@ -40,7 +40,6 @@ const Home = () => {
 
         } catch (error) {
             console.log(error);
-            
             error.message == "Network Error" && console.log("create server error page");
             error.message == "Request failed with status code 404" && console.log("create server error page");
 
